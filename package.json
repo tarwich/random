@@ -1,0 +1,19 @@
+{
+  "name": "random",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "scripts": {
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tarwich/random.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tarwich/random/issues"
+  },
+  "homepage": "https://github.com/tarwich/random#readme",
+  "description": "Random data generator"
+}

@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "allowUnreachableCode": false,
+    "experimentalDecorators": true,
+    "forceConsistentCasingInFileNames": true,
+    "newLine": "LF",
+    "noImplicitAny": true,
+    "noUnusedLocals": true,
+    "target": "esnext",
+    "outDir": "dist",
+    "declaration": true,
+  },
+  "exclude": [
+    "node_modules"
+  ]
+}
