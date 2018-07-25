@@ -102,6 +102,7 @@ export class Random {
   static firstNameGenerator() {
     return this.itemGenerator(maleFirstNames.concat(femaleFirstNames));
   }
+
   static item<T>(items: T[]) {
     return this.itemGenerator(items)();
   }
@@ -112,6 +113,15 @@ export class Random {
       if (data.length === 0) data = items.slice(0);
       return data.splice(floor(random() * data.length), 1)[0];
     };
+  }
+
+  static join(items: Callable<string>[], glue = '') {
+    return this.joinGenerator(items, glue)();
+  }
+  static joinGenerator(items: Callable<string>[], glue = '') {
+    return () => {
+      return items.map(item => call(item)).join(glue);
+    }
   }
 
   static lastName() {

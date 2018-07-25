@@ -9,6 +9,8 @@ export declare class Random {
     static firstNameGenerator(): () => string;
     static item<T>(items: T[]): T;
     static itemGenerator<T>(items: T[]): () => T;
+    static join(items: Callable<string>[], glue?: string): string;
+    static joinGenerator(items: Callable<string>[], glue?: string): () => string;
     static lastName(): string;
     static lastNameGenerator(): () => string;
     static number(options: {

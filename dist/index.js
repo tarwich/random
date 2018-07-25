@@ -104,6 +104,14 @@ class Random {
             return data.splice(floor(random() * data.length), 1)[0];
         };
     }
+    static join(items, glue = '') {
+        return this.joinGenerator(items, glue)();
+    }
+    static joinGenerator(items, glue = '') {
+        return () => {
+            return items.map(item => call(item)).join(glue);
+        };
+    }
     static lastName() {
         return this.lastNameGenerator()();
     }
