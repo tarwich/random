@@ -115,10 +115,10 @@ export class Random {
     };
   }
 
-  static join(items: Callable<string>[], glue = '') {
+  static join(items: Callable<any>[], glue = '') {
     return this.joinGenerator(items, glue)();
   }
-  static joinGenerator(items: Callable<string>[], glue = '') {
+  static joinGenerator(items: Callable<any>[], glue = '') {
     return () => {
       return items.map(item => call(item)).join(glue);
     }
