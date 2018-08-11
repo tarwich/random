@@ -87,6 +87,17 @@ class Random {
             return Array.from(Array(call(count)), () => call(generatorOrValue));
         };
     }
+    static date(options) {
+        return Random.dateGenerator(options)();
+    }
+    static dateGenerator(options) {
+        return () => {
+            return new Date(Random.number({
+                min: options.min instanceof Date ? options.min.getTime() : options.min,
+                max: options.max instanceof Date ? options.max.getTime() : options.max,
+            }));
+        };
+    }
     static firstName() {
         return this.firstNameGenerator()();
     }

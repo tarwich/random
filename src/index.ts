@@ -96,6 +96,20 @@ export class Random {
     };
   }
 
+  static date(options: {min: number | Date, max: number | Date}) {
+    return Random.dateGenerator(options)();
+  }
+  static dateGenerator(options: {min: number | Date, max: number | Date}) {
+    return () => {
+      return new Date(
+        Random.number({
+          min: options.min instanceof Date ? options.min.getTime() : options.min,
+          max: options.max instanceof Date ? options.max.getTime() : options.max,
+        })
+      )
+    };
+  }
+
   static firstName() {
     return this.firstNameGenerator()();
   }

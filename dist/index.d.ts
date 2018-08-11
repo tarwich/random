@@ -5,6 +5,14 @@ declare type Callable<T> = T | (() => T);
 export declare class Random {
     static array<T>(count: Callable<number>, generatorOrValue: Callable<T>): T[];
     static arrayGenerator<T>(count: Callable<number>, generatorOrValue: Callable<T>): () => T[];
+    static date(options: {
+        min: number | Date;
+        max: number | Date;
+    }): Date;
+    static dateGenerator(options: {
+        min: number | Date;
+        max: number | Date;
+    }): () => Date;
     static firstName(): string;
     static firstNameGenerator(): () => string;
     static item<T>(items: T[]): T;
